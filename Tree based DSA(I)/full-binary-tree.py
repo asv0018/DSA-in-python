@@ -6,9 +6,8 @@ class Node:
 
 def isFullTree(root):
     if root is None:
-        return true
+        return True
     elif root.left is None and root.right is None:
-        return true
     elif root.left is not None and root.right is not None:
         return(isFullTree(root.left) and isFullTree(root.right))
     else:
@@ -22,10 +21,10 @@ root.right = Node(2)
 root.left.left = Node(4)
 root.left.right = Node(5)
 
-root.left.left.left = node(6)
+root.left.left.left = Node(6)
 root.left.left.right = Node(7)
 
 if isFullTree(root):
-    print("The tree id is s full binary tree")
+    print("The tree id is a full binary tree")
 else:
     print("The tree id is not a full binary tree")

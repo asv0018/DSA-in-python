@@ -6,4 +6,3 @@
 
 #therefore the difference lies here all the complete
 #binary tree need not be a full binary tree and viceversa
-s

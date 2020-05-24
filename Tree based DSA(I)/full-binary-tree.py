@@ -8,6 +8,7 @@ def isFullTree(root):
     if root is None:
         return True
     elif root.left is None and root.right is None:
+        return True
     elif root.left is not None and root.right is not None:
         return(isFullTree(root.left) and isFullTree(root.right))
     else:

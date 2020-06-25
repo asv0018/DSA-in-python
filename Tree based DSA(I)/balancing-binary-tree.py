@@ -1,39 +1,51 @@
-class Node:
-    def __init__(self,item):
+# Checking if a binary tree is CalculateHeight balanced in Python
+
+
+# CreateNode creation
+class CreateNode:
+
+    def __init__(self, item):
         self.item = item
         self.left = self.right = None
 
+
+# Calculate height
 class CalculateHeight:
     def __init__(self):
-        self.calculateHeight = 0
+        self.CalculateHeight = 0
 
-def isHeightBalanced(root, calculateHeight):
 
-    leftHeight = CalculateHeight()
-    rightHeight = CalculateHeight()
+# Check height balance
+def is_height_balanced(root, calculateHeight):
+    print(callable(CalculateHeight))
+
+    left_height = CalculateHeight()
+    right_height = CalculateHeight()
 
     if root is None:
         return True
 
-    l = isHeightBalanced(root.left,leftHeight)
-    r = isHeightBalanced(root.right,rightHeight)
+    l = is_height_balanced(root.left, left_height)
+    r = is_height_balanced(root.right, right_height)
 
-    calculateHeight.CalculateHeight = max(leftHeight.calculateHeight,rightHeight.calculateHeight) + 1
-    if abs(leftHeight.calculateHeight - rightHeight.calculateHeight) <= 1:
+    calculateHeight.CalculateHeight = max(
+        left_height.CalculateHeight, right_height.CalculateHeight) + 1
+
+    if abs(left_height.CalculateHeight - right_height.CalculateHeight) <= 1:
         return l and r
 
     return False
 
-# creating an instance...
+
 calculateHeight = CalculateHeight()
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
-root.left.right.left = Node(6)
-# validating is the tree balanced or unbalanced...
-if isHeightBalanced(root,calculateHeight):
-    print("The tree is balanced")
+
+root = CreateNode(1)
+root.left = CreateNode(2)
+#root.right = CreateNode(3)
+root.left.left = CreateNode(4)
+root.left.right = CreateNode(5)
+
+if is_height_balanced(root, calculateHeight):
+    print('The tree is balanced')
 else:
-    print("The tree is not balanced")
+    print('The tree is not balanced')
